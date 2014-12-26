@@ -50,6 +50,8 @@ uninstall_rpms: clean
 
 sdist:
 	mkdir -p ${SDISTDIR}
+	cp *.patch ${SDISTDIR}
+	cp *.default ${SDISTDIR}
 	${GET_SDIST}
 
 prep_rpmbuild: prep_build

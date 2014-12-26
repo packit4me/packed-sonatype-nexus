@@ -1,0 +1,14 @@
+--- bin/nexus	2014-12-26 16:20:40.000000000 +0000
++++ bin/nexus	2014-12-26 16:20:22.000000000 +0000
+@@ -43,6 +43,11 @@
+ # chkconfig: 2345 20 80
+ # description: Test Wrapper Sample Application
+ 
++# The following lines allow the above variables to be overridden from
++# standard system configuration points
++[ -e /etc/sysconfig/${APP_NAME} ] && . /etc/sysconfig/${APP_NAME}
++[ -e /etc/defaults/${APP_NAME} ] && . /etc/defaults/${APP_NAME}
++
+ # Do not modify anything beyond this point
+ #-----------------------------------------------------------------------------
+ 
