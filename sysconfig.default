@@ -19,5 +19,5 @@ RUN_AS_USER="nexus"
 PRIORITY=
 
 # Location of the pid file.
-PIDDIR="/var/run"
+PIDDIR="/var/run/nexus"
 
