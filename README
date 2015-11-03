@@ -3,6 +3,9 @@ nexus-oss
 
 This is setup to package Sonatype's Nexus OSS binary release as an RPM, specifically for EL6/7 based distributions.
 
+Build it
+--------
+make
 
 TODO
 ====

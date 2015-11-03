@@ -4,8 +4,8 @@
 
 %define org sonatype
 %define product nexus
-%define upstream_version 2.11.2
-%define upstream_release 06
+%define upstream_version 2.11.4
+%define upstream_release 01
 
 Name:           %{product}-oss
 Version:        %{upstream_version}.%{upstream_release}
@@ -72,7 +72,11 @@ exit 0
 %dir %{_localstatedir}/run/%{product}
 
 %changelog
-* Mon Apr 27 2015 Greg Swift <gregswift@gmail.com> - Nexus 2.11.2.06-1
+* Mon Nov 02 2015 Greg Swift <gregswift@gmail.com> - 2.11.4.01-1
+- Update to upstream
+- https://support.sonatype.com/entries/95320157-Sonatype-Nexus-2-11-4-Release-Notes
+
+* Mon Apr 27 2015 Greg Swift <gregswift@gmail.com> - 2.11.2.06-1
 - Update to upstream. Bypassing a bad release
 - https://support.sonatype.com/entries/87851808-Sonatype-Nexus-2-11-2-Release-Notes
 
