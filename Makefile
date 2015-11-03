@@ -1,4 +1,4 @@
-#SERIAL 201411242120
+#SERIAL 201511022215
 
 # Base the name of the software on the spec file
 PACKAGE := $(shell basename *.spec .spec)
@@ -34,9 +34,6 @@ clean:
 clean_all: clean
 	rm -rf ${ARTIFACTDIR}/
 
-install:
-	${PYTHON} setup.py install -f --root ${DESTDIR}
-
 install_rpms: rpms
 	yum install ${RPMDIR}/${ARCH}/${PACKAGE}*.${ARCH}.rpm
 
@@ -64,6 +61,9 @@ rpms: prep_rpmbuild
 
 srpm: prep_rpmbuild
 	${RPMBUILD} -bs ${PACKAGE}.spec
+
+mock: srpm
+	mock ${MOCK_OPTIONS} ${RPMDIR}/${PACKAGE}*.src.rpm
 
 prep_build: sdist
 	mkdir -p ${BUILDDIR}
