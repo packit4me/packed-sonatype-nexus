@@ -4,7 +4,7 @@
 
 %define org sonatype
 %define product nexus
-%define upstream_version 2.11.4
+%define upstream_version 2.13.0
 %define upstream_release 01
 
 Name:           %{product}-oss
@@ -72,6 +72,10 @@ exit 0
 %dir %{_localstatedir}/run/%{product}
 
 %changelog
+* Mon Apr 25 2016 Greg Swift <gregswift@gmail.com> - 2.13.0.01-1
+- Update to upstream
+- https://support.sonatype.com/hc/en-us/articles/218229168-Nexus-Repository-Manager-2-13-Release-Notes
+
 * Mon Nov 02 2015 Greg Swift <gregswift@gmail.com> - 2.11.4.01-1
 - Update to upstream
 - https://support.sonatype.com/entries/95320157-Sonatype-Nexus-2-11-4-Release-Notes
