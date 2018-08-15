@@ -4,7 +4,8 @@
 
 %define org sonatype
 %define product nexus
-%define upstream_version 2.14.9
+%define major_version 3
+%define upstream_version 3.12.1
 %define upstream_release 01
 
 Name:           %{product}-oss
@@ -18,12 +19,12 @@ URL:            https://sonatype.org/nexus
 #this is the actual source release
 #Source0:        https://github.com/sonatype/%{name}/archive/%{product}-%{upstream_version}-%{upstream_release}.tar.gz
 # This is the bundled built release
-Source0:        http://download.sonatype.com/nexus/oss/%{product}-%{upstream_version}-%{upstream_release}-bundle.tar.gz
+Source0:        https://sonatype-download.global.ssl.fastly.net/repository/repositoryManager/%{major_version}/%{product}-%{upstream_version}-%{upstream_release}-unix.tar.gz
 Source1:        sysconfig.default
 Patch0:         sysvinit.patch
 
 AutoReqProv:    no
-Requires:       jre = 1.7.0
+Requires:       jre = 1.8.0
 Requires(pre):  shadow-utils
 
 %description
@@ -72,6 +73,10 @@ exit 0
 %dir %{_localstatedir}/run/%{product}
 
 %changelog
+* Wed Aug 15 2018 Greg Swift <gregswift@gmail.com> - 3.12.1.01-1
+- Update to current 3 series upstream
+- Requires JRE 1.8
+
 * Wed Aug 15 2018 Greg Swift <gregswift@gmail.com> - 2.14.9.01-1
 - Update to last 2 upstream
 
